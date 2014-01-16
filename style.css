@@ -1,0 +1,1060 @@
+/*
+* 	App Name: Time do Povao
+*	Author: Nucleo Web Campanha Sou Pelegrino 13
+*/
+
+/** 
+* HTML Elements
+* 
+*/
+html {
+  	font-size: 100%;
+  	font-smoothing: antialiased;
+  	-webkit-text-size-adjust: 100%;
+  	-webkit-font-smoothing: antialiased;
+  	-ms-text-size-adjust: 100%;
+	-moz-font-smoothing: antialiased;	
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	font-family: Tahoma, Helvetica, sans-serif;
+
+}
+h1, 
+h2, 
+h3, 
+h4, 
+h5 {
+	margin: 0;
+	padding: 0;
+}
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+img,
+embed,
+object,
+video { max-width: 100%; }
+a { text-decoration: none; }
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover,
+a:active,
+a:visited {
+	outline: 0;
+	text-decoration: none;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+  outline: none;
+  -ms-interpolation-mode: bicubic;
+}
+
+/** 
+*	Fonte Face
+* 	@fontdef	Sanchez Regular
+	@font-variant: Sanchez Italic
+*/
+
+@font-face {
+    font-family: 'sanchez_regularregular';
+    src: url('media/fonts/sanchezregular-webfont.eot');
+    src: url('media/fonts/sanchezregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('media/fonts/sanchezregular-webfont.woff') format('woff'),
+         url('media/fonts/sanchezregular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sanchez_regularitalic';
+    src: url('media/fonts/sanchezregular-ita-webfont.eot');
+    src: url('media/fonts/sanchezregular-ita-webfont.eot?#iefix') format('embedded-opentype'),
+         url('media/fonts/sanchezregular-ita-webfont.woff') format('woff'),
+         url('media/fonts/sanchezregular-ita-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/** 
+* 	CLASSES USUAIS
+* 	todas as classes que podem ser usadas por qualquer elemento
+*/
+.alignleft { float: left; } 
+.alignright { float: right; } 
+.hide { display: none; }
+
+/** image replacement */
+.ir { 
+	display: block; 
+	border: 0; 
+	text-indent: -999999px;
+	white-space: nowrap;
+	overflow: hidden; 
+	background-color: transparent; 
+	background-repeat: no-repeat; 
+	text-align: left; 
+	direction: ltr; 
+	*line-height: 0;
+}
+
+/** 
+* 	BUTTONS
+*/
+
+.button {
+	display: block;
+	background: #b23224;
+	border-top: 2px solid #700000;
+	border-left: 2px solid #700000;
+	border-right: 2px solid #700000;
+/*	box-shadow: 0 5px #700000;*/
+
+	-webkit-box-shadow: 
+
+	rgba(0, 0, 0, 0.2) 0 .5em 5px;
+	-moz-box-shadow: 
+	inset rgba(112, 0, 0,0.6) 0 0.3em .3em, 
+	inset rgba(0,0,0,0.15) 0 -0.1em .3em, 
+	hsl(0, 0%, 60%) 0 .1em 3px, 
+	hsl(0, 0%, 45%) 0 .3em 1px,
+	rgba(0,0,0,0.2) 0 .5em 5px;
+	box-shadow: 
+
+	#700000 0 .1em 3px, #700000 0 .3em 1px, 
+	rgba(0, 0, 0, 0.2) 0 .5em 5px;
+	border-radius: 15px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		-o-border-radius: 15px;
+		-ms-border-radius: 15px;
+}
+/*.button1:active {
+
+}*/
+li.active .button,
+.button:active,
+.button.active {
+	border-top: 2px solid #700000;
+	border-left: 2px solid #700000;
+	border-right: 2px solid #700000;
+	-webkit-box-shadow: 
+	inset rgba(112, 0, 0, 0.6) 0 0.3em .3em, 
+	inset rgba(0, 0, 0, 0.2) 0 -0.1em .3em, 
+	rgba(112, 0, 0, 0.4) 0 .1em 1px, 
+	rgba(0, 0, 0, 0.2) 0 .2em 6px;
+	-moz-box-shadow: 
+	inset rgba(112, 0, 0,0.6) 0 0.3em .3em, 
+	inset rgba(0,0,0,0.2) 0 -0.1em .3em, 
+	rgba(0,0,0,0.4) 0 .1em 1px, 
+	rgba(0,0,0,0.2) 0 .2em 6px;
+	box-shadow: 
+	inset rgba(112, 0, 0, 0.6) 0 0.3em .3em, 
+	inset rgba(0, 0, 0, 0.2) 0 -0.1em .3em, 
+	rgba(0, 0, 0, 0.4) 0 .1em 1px, 
+	rgba(0, 0, 0, 0.2) 0 .2em 6px;
+	-webkit-transform: translateY(.2em);
+	-moz-transform: translateY(.2em);
+	transform: translateY(.2em);
+}
+.button span { display: block; }
+
+/** clear */
+.clearfix:before, .clearfix:after { 
+	content: ""; 
+	display: table;
+}
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/** 
+* 	TAMANHOS
+* 	vários tamanhos de elementos
+*	baseado no Twitter Bootstrap
+*/
+.span1 { width: 810px; }
+.span2 { width: 789px; }
+.span3 { width: 410px; }
+.span4 { width: 360px; }
+.span5 { width: 281px; }
+
+/** GLOBAL */
+#global {
+	overflow: hidden;
+	height: 731px;
+}
+
+/** menu */
+.menu {
+	float: left;
+	width: 100%;
+	height: 68px;
+}
+.menu ul {
+	width: 673px;
+	height: 26px;
+	margin: 12px auto 0;
+	background: #b23224;
+	border: 7px solid #911912;
+	border-radius: 25px;
+		-webkit-border-radius: 25px;
+		-moz-border-radius: 25px;
+		-o-border-radius: 25px;
+}
+.menu ul li {
+	float: left;
+	position: relative;
+}
+.menu ul li a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	transition: all .15s linear;
+		-webkit-transition: all .10s linear;	
+}	
+.menu ul li a.menu-01 {
+	z-index: 1;
+	width: 117px;
+	background: url(images/sprite_menu01.png) no-repeat 0 0;
+}
+.menu ul li a.menu-01:hover,
+.menu ul li a.menu-01.active { background-position: 0 -27px; }
+
+.menu ul li a.menu-02 {
+	z-index: 2;
+	width: 114px;
+	margin-left: 107px;
+	background: url(images/sprite_menu02.png) no-repeat 0 0;
+}
+.menu ul li a.menu-02:hover,
+.menu ul li a.menu-02.active { background-position: 0 -27px; }
+.menu ul li a.menu-02.desactive { background-position: 0 -52px; }
+
+.menu ul li a.menu-03 {
+	z-index: 3;
+	width: 142px;
+	margin-left: 210px;
+	background: url(images/sprite_menu03.png) no-repeat 0 0;
+}
+.menu ul li a.menu-03:hover,
+.menu ul li a.menu-03.active { background-position: 0 -27px; }
+.menu ul li a.menu-03.desactive { background-position: 0 -52px; }
+
+.menu ul li a.menu-04 {
+	width: 120px;
+	margin-left: 340px;
+	background: url(images/sprite_menu04.png) no-repeat 0 0;
+}
+.menu ul li a.menu-04:hover,
+.menu ul li a.menu-04.active { background-position: 0 -27px; }
+.menu ul li a.menu-04.desactive { background-position: 0 -52px; }
+
+.menu ul li a.menu-05 { 
+	width: 123px;
+	margin-left: 449px;
+	background: url(images/sprite_menu05.png) no-repeat 0 0;
+}
+.menu ul li a.menu-05:hover,
+.menu ul li a.menu-05.active { background-position: 0 -27px; }
+.menu ul li a.menu-05.desactive { background-position: 0 -52px; }
+
+.menu ul li a.menu-06 { 
+	width: 112px;
+	margin-left: 561px;
+	background: url(images/sprite_menu06.png) no-repeat 0 0; 
+}
+.menu ul li a.menu-06:hover,
+.menu ul li a.menu-06.active { background-position: 0 -27px; }
+.menu ul li a.menu-06.desactive { background-position: 0 -52px; }
+
+.home,
+.nolike,
+.load,
+.extras,
+.player,
+.team,
+.sign {
+	position: relative;
+	float: left;
+}
+
+/** pagination page */
+.next-page,
+.next-page span { background: url(images/pagination_sprite.png) no-repeat; }
+.next-page {
+	/*position: absolute;
+	z-index: 10;
+	bottom: 0;
+	left: 0;*/
+	width: 286px;
+	height: 55px;
+	margin: 0 0 -8px 264px;
+	background-position: 0 0;
+
+}
+.next-page span {
+	background-position: -287px -15px;
+	width: 164px;
+	height: 18px;
+	margin: 16px auto 0 39px;
+}
+
+
+/**
+*	NO LIKE
+*	formatação da página quando não está curtindo a página
+*/
+.nolike { background: url(images/nolike_bg.jpg) no-repeat 0 0; }
+.nolike .access { margin-top: 590px; }
+.nolike p {
+	margin: 0 auto;
+	background: url(images/nolike_sprite.png) no-repeat;
+}
+.nolike p.first {
+	background-position: 0 0;
+	width: 583px;
+	height: 48px;
+}
+.nolike p.second {
+	background-position: -66px -59px;
+	width: 458px;
+	height: 23px;
+	margin-top: 10px;
+}
+
+/**
+*	HOME
+*	formatação da home
+*/
+.home {	background: url(images/bg-home.jpg) no-repeat 0 0; }
+.home .access {
+	margin: 600px auto;
+	text-align: center;
+}
+.home .access { 
+	font-weight: bolder;
+	color: #b23224;
+}
+.home .access p { background: url(images/home_sprite.png) no-repeat; }
+.home .access .first, .home .access .second { margin: 0 auto; }
+.home .access .first {
+	background-position: -2px -4px;
+	width: 407px;
+	height: 31px;
+	margin-left: -20px;
+	margin-bottom: 10px;
+}
+.home .access .second { 
+	background-position: -5px -46px;
+	width: 348px;
+	height: 19px;
+	margin-left: 10px;
+}
+.home .access a {
+	width: 322px;
+	height: 30px;
+	padding: 10px 11px 0 14px;
+	margin: 10px auto 0 auto;
+}
+.home .access a span {
+	width: 294px;
+	height: 20px;
+	margin: 0 auto;
+	background: url(images/home_sprite.png) no-repeat -3px -82px;
+}
+
+
+/**
+*	LOADING
+*	pagina de loading
+*/
+.load { background: url(images/loading_bg.jpg) no-repeat 0 0;}
+
+.loading-content,
+.loading-content .mask-loading {
+	border-radius: 20px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		-o-border-radius: 20px;
+		-ms-border-radius: 20px;
+}
+.loading-content {
+	display: none;
+	width: 575px;
+	height: 30px;
+	margin: 680px auto 0 auto;
+	padding-top: 5px;
+	background: #700000;
+}
+.loading-content span {
+	display: block;
+	height: 25px;
+}
+.loading-content .mask-loading {
+	width: 560px;
+	background: #b23224;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.loading-content .ui-progressbar.ui-widget-content{ border: 0; }
+.loading-content .mask-loading .loader,
+.loading-content .mask-loading .ui-progressbar-value {
+	width: 20%;
+	background: #dbab27 url(images/loading_bg_loader.jpg) repeat-x 0 0;
+	border-radius: 15px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		-o-border-radius: 15px;
+		-ms-border-radius: 15px;
+}
+
+.loader-init {
+	width: 200px;
+	margin: 635px auto 0 auto
+}
+.loader-init span { display: block; }
+.loader-init .ico-load {
+	width: 200px;
+	height: 41px;
+	margin: 0 auto;
+	background: url(images/loading.gif);
+}
+.loader-init .text {
+	text-align: center;
+	color: #910C07;
+	font: 13px "sanchez_regularregular", Georgia, Helvetica, sans-serif;
+}
+
+.create_player .next-page,
+.player .next-page { margin-top: 0; }
+
+/**
+*	CRIE SEU AVATAR
+*	Exibe as opções de avatar para o usuário
+*/
+.create_player { 
+	position: relative;
+	background: url(images/create_player.jpg) no-repeat 0 0;
+}
+.create_player h1 {
+	position: absolute;
+	z-index: 20;
+	right: 0;
+	top: 0;
+	margin: 80px 45px 0 0;
+	background: url(images/player_sprite.png) no-repeat;
+	width: 318px;
+	height: 143px;
+	background-position: 0 0;
+}
+.create_player .menu { display: none; }
+.create_player .share-button {
+	display: none;
+	position: absolute;
+	z-index: 30;
+	bottom: 0;
+	right: 0;
+	margin: 0 72px 174px 0;
+
+}
+#crop {
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	margin-top: 50px;
+}
+
+/**
+*	PLAYER
+*	Página com informações do usuário
+*/
+.player { background: url(images/player_bg.jpg) no-repeat 0 0; }
+#infoJogador .type,
+.share-button span { background: url(images/player_sprite.png) no-repeat; }
+
+.player .content {
+	position: relative;
+	margin-top: 100px;
+	height: 584px;
+}
+
+
+/** jogador e compartilhar */
+.col-player { position: relative; }
+.col-player .images-player{
+	position: absolute;
+	width: 471px;
+	left: 0;
+	top: 0;
+	width: 471px;
+	margin-top: 15px;
+}
+.col-player .avatar-user,
+.col-player .img-player { 
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.col-player .img-player { z-index: 10; }
+.col-player .avatar-user {
+
+	margin-left: 62px;
+}
+
+.share-button {
+	width: 216px;
+	height: 42px;
+}
+.share-button span {
+	width: 196px;
+	height: 32px;
+	margin: 4px auto 0;
+	background-position: -339px -1px;
+}
+
+
+/** button share item */
+.player .share-button {
+	display: none;
+	position: absolute;
+	z-index: 15;
+	right: 0;
+	bottom: 0;
+	margin: 0 72px 150px 0;
+}
+
+#infoJogador {
+	position: absolute;
+	z-index: 20;
+	top: 0;
+	right: 0;
+	margin: 345px 26px 0 0;
+}
+#infoJogador h2 { margin-bottom: 10px; }
+
+/* loadings */
+
+.load-content {
+	display: none;
+	position: absolute;
+	z-index: 40;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 731px;
+	background: #000;
+	background: rgba(0,0,0,0.6);
+}
+.load-content .wrap {
+	width: 200px;
+	margin: 319px auto 0;
+}
+.load-content span { display: block; }
+.load-content .ico-load {
+	width: 200px;
+	height: 41px;
+	background: url(images/loading.gif) no-repeat 0 0;
+}
+.load-content .txt-load {
+	width: 94%;
+	margin: 5px 0 0;
+	padding: 6px;
+	color: #fff;
+	text-align: center;
+	font: 14px "sanchez_regularitalic", Georgia, Helvetica, sans-serif;
+}
+
+
+.loading-data-user,
+.loading-share {
+	display: none;
+	position: absolute;
+	z-index: 40;
+	left: 0;
+	top:0;
+	width: 100%;
+	text-align: center;
+	font: 15px "sanchez_regularitalic", Georgia, Helvetica, sans-serif;
+}
+.loading-share .ico-loader,
+.loading-data-user .ico-loader {
+	display: block;
+	width: 54px;
+	height: 55px;
+	margin: 0 auto;
+	background: url(images/ajax_loaderUser.gif) no-repeat 0 0;
+}
+
+/*	loading data user */
+.loading-data-user {
+	margin-top: 308px;
+	color: #a30000
+}
+/* share player */
+.loading-share {
+	height: 669px;
+	margin-top: 63px;
+	background: #000;
+	background: rgba(0,0,0, 0.5);
+	color: #fff;
+}
+.loading-share .ico-loader { margin-top: 308px;}
+
+/**	
+*	TIPO DE JOGADOR
+*/
+#infoJogador .type { float: right; }
+
+/** atacante */
+#infoJogador .type-0 {
+	background-position: 0 -150px;
+	width: 314px;
+	height: 62px;
+}
+/** meio de campo */
+#infoJogador .type-1 {
+	background-position: -321px -131px;
+	width: 404px;
+	height: 63px;
+}
+/** lateral */
+#infoJogador .type-2 {
+	background-position: -320px -227px;
+	width: 266px;
+	height: 62px;
+}
+/** zagueiro */
+#infoJogador .type-3 {
+	background-position: 0 -228px;
+	width: 301px;
+	height: 62px;
+}
+/** goleiro */
+#infoJogador .type-4 {
+	background-position: -465px -57px;
+	width: 266px;
+	height: 62px;
+}
+#infoJogador p {
+	font: 16px Georgia, Helvetica, sans-serif;
+	color: #b23224;
+	text-align: right;
+}
+
+#infoJogador .score-player {
+	float: right;
+	margin-top: 25px;
+}
+#infoJogador .score-player ul li {
+	position: relative;
+	height: 39px;
+	margin-bottom: 8px;
+}
+#infoJogador .score-player ul li span {
+	display: block;
+	float: left;
+	height: 39px;
+	line-height: 39px;
+}
+#infoJogador .score-player ul li .score {
+	padding: 0 10px 0;
+	background: #b23224;
+	text-align: center;
+	font: 900 33px "sanchez_regularitalic", Georgia, Helvetica, sans-serif;
+	color: #f7b529;
+}
+/** hack para o IECA */
+.score { width: 60px\0/; }
+
+#infoJogador .score-player ul li .item {
+	float: left;
+	width: 205px;
+	background: #fdd142;
+	background: rgba(255,255,255, 0.2);
+	text-align: center;
+	font: 26px "sanchez_regularitalic", Georgia, Helvetica, sans-serif;
+	color: #b23224;
+}
+
+
+
+/**
+*	TROPHY
+*	Página com troféus
+*/
+.trophy { background: url(images/trophy_bg.jpg) no-repeat 0 0}
+.trophy .next-page { margin-top: 20px !important; }
+.trophy h1,
+.list-trophy li .social,
+.trophy .tabs li a span { background: url(images/trophy_sprite.png) no-repeat; }
+.trophy .trophy-img { margin: 130px 0 0 50px; }
+
+#infoTrophy { margin-left: 35px; }
+#infoTrophy h1 {
+	width: 345px;
+	height: 75px;
+	margin: 45px 0 32px;
+	background-position: 0 -2px;
+}
+.trophy .tabs,
+.trophy .tabs li { float: left; }
+.trophy .tabs { margin-bottom: 20px; }
+.trophy .tabs li { margin-right: 10px; }
+.trophy .tabs li a {
+	width: 137px;
+	height: 42px;
+}
+.trophy .tabs li.active a,
+.trophy .tabs li a:hover,
+.trophy .tabs li a.active { background: #f7b529; }
+.trophy .tabs li a span { margin: 15px auto 0; }
+
+.trophy .tabs li a .nacionais {
+	background-position: -4px -121px;
+	width: 111px;
+	height: 14px;
+}
+.trophy .tabs li.active .nacionais,
+.trophy .tabs li a:hover .nacionais { background-position: -4px -97px; }
+.trophy .tabs li a .estaduais {
+	background-position: -125px -122px;
+	width: 104px;
+	height: 14px;
+}
+.trophy .tabs li.active .estaduais,
+.trophy .tabs li a:hover .estaduais { background-position: -125px -97px; }
+
+#estaduais, 
+#nacionais { height: 380px; }
+
+
+/** lista trofeus */
+.list-trophy li {
+	position: relative;
+	width: 296px;
+	/*height: 116px;*/
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #b23224;
+	color: #b23224;
+	font-family: "sanchez_regularitalic", Georgia, Arial, Helvetica, sans-serif;
+}
+
+.list-trophy li h2 {	
+	font-weight: bolder;
+	font-size: 27px;
+	letter-spacing: -1px;
+}
+.list-trophy li .content-trophy {
+	padding: 10px;
+	background: rgba(239,213,139, 0.5);
+}
+.list-trophy li:hover .content-trophy {
+	background: rgba(178,50,36, 0.2);
+}
+.list-trophy li:hover .share {
+	display: block;
+}
+
+.list-trophy li .share {
+	display: none;
+	position: absolute;
+	z-index: 10;
+	top: 5px;
+	right: 0;
+	width: 67px;
+}
+.list-trophy li .social {
+	float: left;
+	width: 29px;
+	height: 27px;
+}
+.list-trophy li .social.twitter {
+	margin-right: 5px;
+	background-position: -238px -90px;
+}
+.list-trophy li .social.facebook {
+
+	background-position: -271px -90px;
+}
+.list-trophy li .year { font-size: 15px; }
+
+
+/**
+*	SELEÇÃO
+*	formatação da página de seleção
+*/
+
+.team { background: url(images/team_bg.jpg) no-repeat 0 0; }
+.team h1,
+#friendsList h2,
+#friendsList .list-friends h3 { background: url(images/team_sprite.png) no-repeat; }
+.team h1 {
+	width: 529px;
+	height: 75px;
+	margin: 20px auto 10px auto;
+	background-position: -4px -2px;
+}
+.team .next-page {
+	position: absolute;
+	z-index: 20;
+	left: 0;
+	bottom: 0;
+}
+
+
+.team .content {
+	width: 100%;
+	height: 541px;
+}
+.team .content .loading {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	display: none;
+	width: 100%;
+	margin: 400px auto 0;
+	text-align: center;
+	color: #fff;
+	font: 13px "sanchez_regularregular", Georgia, Helvetica, sans-serif;
+}
+.team .content .loading span {
+	display: block;
+	width: 54px;
+	height: 55px;
+	margin: 0 auto;
+	background: url(images/ajax_loaderUser.gif) no-repeat 0 0;
+}
+/** lista de amigos */
+#friendsList {
+	width: 585px;
+	height: 399px;
+	margin: 65px auto 0;
+}
+
+#friendsList h2 {
+	background-position: -1px -102px;
+	width: 313px;
+	height: 97px;
+	margin: 0 auto 20px;
+}
+#friendsList .list-friends {
+	width: 90%;
+	height: 359px;
+	padding: 20px 30px;
+	background: url(images/team_friendlist_bg.png) no-repeat 0 0;
+}
+#friendsList .list-friends h3 {
+	background-position: -9px -214px;
+	width: 378px;
+	height: 22px;
+	margin: 0 auto 30px;
+}
+#friendsList .list-friends #scroll { 
+	width: 100%; 
+	height: 295px;
+}
+#friendsList .list-friends ul { margin: 0; }
+#friendsList .list-friends ul li,
+#friendsList .list-friends ul li input,
+#friendsList .list-friends ul li img { float: left; }
+#friendsList .list-friends ul li {
+	float: left;
+	width: 150px;
+	height: 50px;
+	overflow: hidden;
+	margin: 0 15px  20px 0;
+	font: 13px "sanchez_regularregular", Georgia, Arial, Helvetica, sans-serif;
+	color: #ffcb2e;
+}
+#friendsList .list-friends ul li img {
+	margin-right: 5px;
+	border: 2px solid #ffcb2e;
+}
+#friendsList .list-friends ul li input[type="checkbox"] {
+	border: 2px solid #ffcb2e;
+}
+.team .content .result-team { display: none; }
+
+.team #flashContent {
+	width: 759px;
+	height: 489px;
+	margin: 0 auto;
+	background: url(images/team_flash_bg.png) no-repeat 0 0;
+}
+.team #flashContent #flash {
+	width: 702px;
+	height: 408px;
+	margin: 30px 30px 0;
+}
+
+.team-img {
+	width: 759px;
+	margin: 0 auto;
+}
+.team .share-button {
+	display: none;
+	position: absolute;
+	z-index: 10;
+	bottom: 0;
+	left: 0;
+	margin: 0 0 130px 298px;
+}
+
+/**
+*	EXTRAS
+*	formatação da página de extras
+*/
+.extras { background: url(images/extras_bg.jpg) no-repeat 0 0; }
+.extras h1,
+.content-wallpaper .label-select,
+.badges li a span,
+#hino h2 { background: url(images/extras_sprite.png) no-repeat; }
+.extras h1 {
+	width: 315px;
+	height: 47px;
+	background-position:  0 0;
+	margin: 50px auto;
+}
+#contentExtras {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 190px;
+}
+#wallpapers, #hino {
+	position: absolute;
+}
+#wallpapers {
+	float: left;
+	width: 100%;
+	height: 180px;
+	background: url(images/extras_wallpaper_bg.png) no-repeat 0 0;
+}
+.content-wallpaper {
+	width: 470px;
+	margin: 40px auto 0;
+}
+.content-wallpaper .label-select {
+	background-position: -3px -58px;
+	width: 283px;
+	height: 27px;
+}
+
+/** hino */
+#hino {
+	float: left;
+	width: 100%;
+	height: 190px;
+}
+#hino .content-hino {
+	width: 620px;
+	height: 160px;
+	padding-top: 30px;
+	margin: 0 auto;
+	background: url(images/extras_hino_bg.png) no-repeat 0 0;
+}
+#hino h2 {
+	background-position: -322px -4px;
+	width: 293px;
+	height: 27px;
+	margin: 0 auto 0;
+}
+
+
+/** badges */
+#badgeExtras {
+	width: 670px;
+	margin: 40px auto 0;
+}
+#badgeExtras ul,
+#badgeExtras ul li { float: left; }
+#badgeExtras ul li,
+#badgeExtras ul li a { position: relative; }
+#badgeExtras ul li { margin-right: 67px; }
+#badgeExtras ul li:last-child { margin-right: 0; }
+
+#badgeExtras ul li a span {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+}
+#badgeExtras ul li a .front { z-index: 10; }
+#badgeExtras ul li a:hover .front {	z-index: 5; }
+#badgeExtras ul li a:hover .back,
+#badgeExtras ul li a.active .back {
+	 z-index: 10;
+	 display: block;
+}
+
+/** seja um olheiro */
+.badge-1,
+.badge-1 .front,
+.badge-1 .back {
+	width: 175px;
+	height: 226px;
+}
+.badge-1 span.front { background-position: -3px -97px !important; }
+.badge-1 span.back { background-position:  -199px -97px !important; }
+
+/** ouca o hino */
+.badge-2,
+.badge-2 .front,
+.badge-2 .back {
+	width: 172px;
+	height: 228px;
+}
+.badge-2 span.front { background-position: -391px -97px !important; }
+.badge-2 span.back { background-position:  -579px -97px !important; }
+
+/** baixe o wallpaper */
+.badge-3,
+.badge-3 .front,
+.badge-3 .back {
+	width: 189px;
+	height: 235px;
+}
+.badge-3 span.front { background-position: -4px -337px !important; }
+.badge-3 span.back { background-position:  -224px -337px!important; }
+
+/**
+*	JOGAR
+*	formatacao pagina game
+*/
+.game { background: url(images/game_bg.jpg) no-repeat 0 0; }
+.game .next-page { margin-top: 24px; }
+
+/**
+*	ASSINAR
+*	pagina com video de lula explicando os ensinamentos do PT
+*/
+
+.sign { background: url(images/sign_bg.jpg) no-repeat 0 0; }
+.sign .next-page {
+	position: absolute;
+	z-index: 30;
+	left: 0;
+	bottom: 0;
+	margin-top: 686px;
+}
+.sign #flash {
+	width: 810px;
+	height: 664px;
+}
